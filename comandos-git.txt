@@ -1,45 +1,262 @@
-1° comando  - git config --global user.name "garageunicorn"
-2° comando - git config --global user.email "professorvitorionetto@gmail.com"
-3° comando - git config --list
-4° comando - mkdir aula-git
-6° comando - cd .\aula-git\
-7° comando - git init
-1° Passo - Criar o Arquivo Readme.md dentro da pasta aula-git
-8° comando - git status
-9° comando - git add Readme.md
-10° comando - git status
-11° comando - git commit -m "Criei o arquivo Readme.md"
-12° comando - git status
-2° Passo - Editar o arquivo
-13° comando - git status
-14° comando - git add Readme.md
-15° comando - git status
-16° comando - git commit -m "edição 1 do arquivo Readme.md"
-17° comando - git status
-18° comando - git log
-19° comando - git show 0eb52b5bdb9ccf37e2ac5f93042b4376d1f5524a
-3° Passo - Ver diferenças entre commits
-20° comando - git diff 0eb52b5bdb9ccf37e2ac5f93042b4376d1f5524a HEAD
-Explicação: Compara as mudanças entre o primeiro commit (hash fornecido) e a versão atual.
-4° Passo - Desfazer alterações (reset)
-21° comando - git reset --hard 0eb52b5bdb9ccf37e2ac5f93042b4376d1f5524a
-Explicação: Volta o repositório para o estado do primeiro commit (cuidado: --hard descarta todas as alterações não commitadas!).
-22° comando - git log
-Explicação: Mostra que agora só existe o primeiro commit no histórico.
-5° Passo - Trabalhando com Git Remoto (ex: GitHub)
-23° comando - git remote add origin https://github.com/seu-usuario/aula-git.git
-Explicação: Vincula seu repositório local a um repositório remoto (substitua a URL pela do seu repositório no GitHub/GitLab).
-24° comando - git git branch -M main
-enomeia o branch atual (geralmente master) para main.
+### **Configuração Inicial do Git**  
+1° **Comando**:  
 
-O -M significa "Move/Rename forçado" (útil se o branch já existir).
+git config --global user.name "garageunicorn"
+  
+**Explicação**:  
+- Define o nome de usuário **global** do Git (usado em todos os seus repositórios).  
+- Substitua `"garageunicorn"` pelo seu nome de usuário.  
 
-Por que usar?
+---
 
-Antigamente o Git usava master como branch padrão, mas hoje o padrão da comunidade é main (GitHub, GitLab, etc.).
+2° **Comando**:  
 
-Este comando alinha seu repositório local com o padrão moderno.
-25° comando - git push -u origin main
-Explicação: Envia os commits locais para o repositório remoto (-u define o remote padrão para futuros pushes).
+git config --global user.email "professorvitorionetto@gmail.com"
+  
+**Explicação**:  
+- Define o e-mail associado às suas ações no Git.  
+- Use o mesmo e-mail cadastrado no GitHub/GitLab (se for o caso).  
 
+---
 
+3° **Comando**:  
+
+git config --list
+  
+**Objetivo**:  
+- Lista todas as configurações do Git para verificar se `user.name` e `user.email` estão corretos.
+
+---
+
+### **Criação do Repositório Local**  
+4° **Comando**:  
+
+mkdir aula-git
+  
+**Objetivo**:  
+- Cria uma pasta chamada `aula-git` no diretório atual.  
+
+---
+
+6° **Comando**:  
+
+cd .\aula-git\
+  
+**Explicação**:  
+- Entra na pasta `aula-git` (Windows).  
+- No Linux/macOS: `cd aula-git`.
+
+---
+
+7° **Comando**:  
+
+git init
+  
+**Objetivo**:  
+- Inicializa um repositório Git vazio na pasta `aula-git`.
+
+---
+
+### **Gerenciamento de Arquivos e Commits**  
+**1° Passo**: Criar o arquivo `Readme.md` manualmente (via editor de texto).  
+
+---
+
+8° **Comando**:  
+
+git status
+  
+**Explicação**:  
+- Mostra o estado atual do repositório.  
+- O `Readme.md` aparecerá como **untracked** (não monitorado pelo Git).  
+
+---
+
+9° **Comando**:  
+
+git add Readme.md
+  
+**Objetivo**:  
+- Adiciona o `Readme.md` à **staging area** (área de preparação para commit).  
+
+---
+
+10° **Comando**:  
+
+git status
+  
+**Explicação**:  
+- Agora o `Readme.md` aparece como **changes to be committed** (pronto para ser commitado).  
+
+---
+
+11° **Comando**:  
+
+git commit -m "Criei o arquivo Readme.md"
+  
+**Objetivo**:  
+- Cria o primeiro commit com o arquivo `Readme.md`.  
+- A flag `-m` permite adicionar uma mensagem descritiva.  
+
+---
+
+12° **Comando**:  
+
+git status
+  
+**Explicação**:  
+- Mostra que não há alterações pendentes após o commit.  
+
+---
+
+### **Edições e Novos Commits**  
+**2° Passo**: Editar o `Readme.md` (adicionar texto, salvar).  
+
+---
+
+13° **Comando**:  
+
+git status
+  
+**Explicação**:  
+- O `Readme.md` agora aparece como **modified** (modificado).  
+
+---
+
+14° **Comando**:  
+
+git add Readme.md
+  
+**Objetivo**:  
+- Prepara a nova versão do arquivo para commit.  
+
+---
+
+15° **Comando**:  
+
+git status
+  
+**Explicação**:  
+- Mostra o arquivo como **changes to be committed** novamente.  
+
+---
+
+16° **Comando**:  
+
+git commit -m "edição 1 do arquivo Readme.md"
+  
+**Objetivo**:  
+- Cria um segundo commit com as alterações feitas.  
+
+---
+
+17° **Comando**:  
+
+git status
+  
+**Explicação**:  
+- Confirma que não há alterações pendentes.  
+
+---
+
+### **Histórico e Detalhes de Commits**  
+18° **Comando**:  
+
+git log
+  
+**Objetivo**:  
+- Exibe o histórico de commits com hashes, autores, datas e mensagens.  
+
+---
+
+19° **Comando**:  
+
+git show 0eb52b5bdb9ccf37e2ac5f93042b4376d1f5524a
+  
+**Explicação**:  
+- Mostra detalhes do commit específico (hash informado).  
+- Substitua o hash pelo do seu primeiro commit (visto no `git log`).  
+
+---
+
+### **Comparando Alterações**  
+**3° Passo**: Ver diferenças entre commits  
+20° **Comando**:  
+
+git diff 0eb52b5bdb9ccf37e2ac5f93042b4376d1f5524a HEAD
+  
+**Explicação**:  
+- Compara o primeiro commit (hash) com a versão atual (`HEAD`).  
+- Mostra linhas adicionadas (**+**) ou removidas (**-**).  
+
+---
+
+### **Desfazendo Alterações**  
+**4° Passo**: Reset para um commit anterior  
+21° **Comando**:  
+
+git reset --hard 0eb52b5bdb9ccf37e2ac5f93042b4376d1f5524a
+  
+**Aviso**:  
+- `--hard` **apaga permanentemente** todas as alterações não commitadas.  
+- Use apenas se tiver certeza!  
+
+---
+
+22° **Comando**:  
+
+git log
+  
+**Objetivo**:  
+- Confirma que o histórico agora só tem o primeiro commit.  
+
+---
+
+### **Trabalhando com Repositório Remoto**  
+**5° Passo**: Configurar Git Remoto (ex: GitHub)  
+
+23° **Comando**:  
+
+git remote add origin https://github.com/seu-usuario/aula-git.git
+  
+**Explicação**:  
+- `origin` é um apelido para o repositório remoto.  
+- Substitua a URL pela do seu repositório no GitHub/GitLab.  
+
+---
+
+24° **Comando**:  
+
+git branch -M main
+  
+**Objetivo**:  
+- Renomeia o branch padrão (geralmente `master`) para `main`.  
+- Alinha com o padrão moderno do GitHub.  
+
+---
+
+25° **Comando**:  
+
+git push -u origin main
+  
+**Explicação**:  
+- Envia os commits locais para o repositório remoto.  
+- `-u` vincula o branch local ao remoto (próximos pushes só precisam de `git push`).  
+
+---
+
+### **Recapitulação de Conceitos**  
+| Comando/Ação            | Objetivo                                 |  
+|-------------------------|------------------------------------------|  
+| `git config`            | Configurar usuário e e-mail              |  
+| `git init`              | Iniciar um repositório local             |  
+| `git add`               | Preparar arquivos para commit            |  
+| `git commit`            | Salvar alterações no histórico           |  
+| `git log`/`git show`    | Inspecionar o histórico                  |  
+| `git diff`              | Comparar versões de arquivos             |  
+| `git reset --hard`      | **Desfazer** alterações (cuidado!)       |  
+| `git remote`/`git push` | Trabalhar com repositórios remotos       |  
+
+--- 
+
+Ajude adicionando mais comando a lista de comandos a esse arquivo S2
