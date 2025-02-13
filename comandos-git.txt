@@ -1,0 +1,45 @@
+1° comando  - git config --global user.name "garageunicorn"
+2° comando - git config --global user.email "professorvitorionetto@gmail.com"
+3° comando - git config --list
+4° comando - mkdir aula-git
+6° comando - cd .\aula-git\
+7° comando - git init
+1° Passo - Criar o Arquivo Readme.md dentro da pasta aula-git
+8° comando - git status
+9° comando - git add Readme.md
+10° comando - git status
+11° comando - git commit -m "Criei o arquivo Readme.md"
+12° comando - git status
+2° Passo - Editar o arquivo
+13° comando - git status
+14° comando - git add Readme.md
+15° comando - git status
+16° comando - git commit -m "edição 1 do arquivo Readme.md"
+17° comando - git status
+18° comando - git log
+19° comando - git show 0eb52b5bdb9ccf37e2ac5f93042b4376d1f5524a
+3° Passo - Ver diferenças entre commits
+20° comando - git diff 0eb52b5bdb9ccf37e2ac5f93042b4376d1f5524a HEAD
+Explicação: Compara as mudanças entre o primeiro commit (hash fornecido) e a versão atual.
+4° Passo - Desfazer alterações (reset)
+21° comando - git reset --hard 0eb52b5bdb9ccf37e2ac5f93042b4376d1f5524a
+Explicação: Volta o repositório para o estado do primeiro commit (cuidado: --hard descarta todas as alterações não commitadas!).
+22° comando - git log
+Explicação: Mostra que agora só existe o primeiro commit no histórico.
+5° Passo - Trabalhando com Git Remoto (ex: GitHub)
+23° comando - git remote add origin https://github.com/seu-usuario/aula-git.git
+Explicação: Vincula seu repositório local a um repositório remoto (substitua a URL pela do seu repositório no GitHub/GitLab).
+24° comando - git git branch -M main
+enomeia o branch atual (geralmente master) para main.
+
+O -M significa "Move/Rename forçado" (útil se o branch já existir).
+
+Por que usar?
+
+Antigamente o Git usava master como branch padrão, mas hoje o padrão da comunidade é main (GitHub, GitLab, etc.).
+
+Este comando alinha seu repositório local com o padrão moderno.
+25° comando - git push -u origin main
+Explicação: Envia os commits locais para o repositório remoto (-u define o remote padrão para futuros pushes).
+
+
