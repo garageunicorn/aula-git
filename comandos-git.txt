@@ -259,6 +259,6 @@ git push -u origin main
 
 --- 
 
-Quer Ajudar? é só adicionar mais comandos uteis aqui neste, lembre-se:
-de explicar oque o comando faz e preencher atualizar a ##Recapitulação de Conceitos##.
+Quer Ajudar? é só adicionar mais comandos uteis aqui, lembre-se:
+de explicar oque o comando faz e atualizar a ##Recapitulação de Conceitos##.
 S2 Obrigado!!!
