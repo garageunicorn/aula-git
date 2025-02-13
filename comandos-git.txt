@@ -259,4 +259,6 @@ git push -u origin main
 
 --- 
 
-Ajude adicionando mais comando a lista de comandos a esse arquivo S2
+Quer Ajudar? é só adicionar mais comandos uteis aqui neste, lembre-se:
+de explicar oque o comando faz e preencher atualizar a ##Recapitulação de Conceitos##.
+S2 Obrigado!!!
